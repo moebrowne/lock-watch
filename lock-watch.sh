@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# Get the source directory
+DIR="${BASH_SOURCE%/*}"
+if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
+
+# Set the script root path
+PATH_ROOT="$DIR"
+
+# Set the scripts root path
+PATH_SCRIPTS_ROOT="$PATH_ROOT/scripts"
+
 runLockScripts() {
 	echo "Screen Locked"
 }
