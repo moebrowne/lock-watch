@@ -29,3 +29,6 @@
 Session.vim
 .netrwhist
 
+## Scripts
+/scripts/lock/*.sh
+/scripts/unlock/*.sh
