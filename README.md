@@ -14,3 +14,9 @@ execution occurs is lexical sort order of the files names.
 
 If you need to ensure an execution order I would recommenced naming your scripts
 like this `00-my-script.sh` and `10-my-second-script.sh`
+
+## System Support
+
+By default this script listens for events from the [MATE](http://mate-desktop.org/)
+screen saver to detect the locking and unlocking but it will work for Gnome or Unity
+to if you use the `--system mate|gnome|unity` flag
