@@ -1,1 +1,3 @@
-# Watch for and run scripts when locking
+# Lock Watch
+
+Watch for and run scripts when locking
