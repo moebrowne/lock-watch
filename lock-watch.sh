@@ -11,11 +11,11 @@ PATH_ROOT="$DIR"
 PATH_SCRIPTS_ROOT="$PATH_ROOT/scripts"
 
 runLockScripts() {
-	echo "Screen Locked"
+	run-parts --regex '\.sh$' '$PATH_SCRIPTS_ROOT/lock'
 }
 
 runUnlockScripts() {
-	echo "Screen Unlocked"
+	run-parts --regex '\.sh$' '$PATH_SCRIPTS_ROOT/unlock'
 }
 
 # Start monitoring for the lock and unlock events
