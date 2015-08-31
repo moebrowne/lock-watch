@@ -11,11 +11,11 @@ PATH_ROOT="$DIR"
 PATH_SCRIPTS_ROOT="$PATH_ROOT/scripts"
 
 runLockScripts() {
-	run-parts --regex '\.sh$' '$PATH_SCRIPTS_ROOT/lock'
+	run-parts --regex '\.sh$' "$PATH_SCRIPTS_ROOT/lock"
 }
 
 runUnlockScripts() {
-	run-parts --regex '\.sh$' '$PATH_SCRIPTS_ROOT/unlock'
+	run-parts --regex '\.sh$' "$PATH_SCRIPTS_ROOT/unlock"
 }
 
 # Start monitoring for the lock and unlock events
