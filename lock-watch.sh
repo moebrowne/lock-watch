@@ -39,6 +39,10 @@ runUnlockScripts() {
 	run-parts --regex '\.sh$' "$PATH_SCRIPTS_ROOT/unlock"
 }
 
+if [[ -z "${DBUS_SESSION_BUS_ADDRESS}" ]]; then
+  export $(dbus-launch)
+fi
+
 # Start monitoring for the lock and unlock events
 while read X; do
 	if echo $X | grep "boolean true" &> /dev/null; then
