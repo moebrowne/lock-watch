@@ -32,14 +32,10 @@ runUnlockScripts() {
 }
 
 # Start monitoring for the lock and unlock events
-dbus-monitor --session "type='signal',interface='org.$SYSTEM_TYPE.ScreenSaver'" | \
-(
-while true; do
-	read X;
+while read X; do
 	if echo $X | grep "boolean true" &> /dev/null; then
-	runLockScripts;
+	  runLockScripts;
 	elif echo $X | grep "boolean false" &> /dev/null; then
-	runUnlockScripts;
+	  runUnlockScripts;
 	fi
-done
-)
+done < <(dbus-monitor --session "type='signal',interface='org.$SYSTEM_TYPE.ScreenSaver'")
