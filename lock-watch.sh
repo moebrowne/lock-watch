@@ -1,5 +1,13 @@
 #!/bin/bash
 
+pid=($(pgrep -U "$UID" "$(basename -- "$0")"))
+pid_count=${#pid[@]}
+
+if [[ ${#pid[@]} -gt "1" ]]; then
+  echo "Lock watch is already running"
+  exit 1
+fi
+
 # Get the source directory
 DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
